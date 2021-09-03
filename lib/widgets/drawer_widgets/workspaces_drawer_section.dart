@@ -33,9 +33,6 @@ class WorkspacesDrawerSection extends StatelessWidget {
           itemCount: 7,
           itemBuilder: (ctx, i) => Container(
             height: 45,
-            decoration: BoxDecoration(
-              color: Colors.white,
-            ),
             child: Row(
               children: [
                 SizedBox(width: 15),
