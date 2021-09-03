@@ -4,6 +4,7 @@ import 'drawer_buttons.dart';
 import 'workspaces_drawer_section.dart';
 import 'drawer_header_widget.dart';
 import 'drawer_header_buttons.dart';
+import 'drawer_footer_buttons.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -13,28 +14,6 @@ class AppDrawer extends StatelessWidget {
         children: [
           DrawerHeaderWidget(),
           DrawerHeaderButtons(),
-          // Container(
-          //   height: 45,
-          //   width: double.infinity,
-          //   child: Column(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     crossAxisAlignment: CrossAxisAlignment.start,
-          //     children: [
-          //       Row(
-          //         children: [
-          //           SizedBox(width: 15),
-          //           Text(
-          //             'Workspaces',
-          //             style: TextStyle(
-          //               fontWeight: FontWeight.bold,
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // WorkspacesDrawerSection(),
           Container(
             height: 45,
             width: double.infinity,
@@ -74,6 +53,7 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
           ),
+          DrawerFooterButtons(),
         ],
       ),
     );
