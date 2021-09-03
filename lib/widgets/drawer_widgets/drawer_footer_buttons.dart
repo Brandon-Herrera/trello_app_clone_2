@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import 'drawer_buttons.dart';
@@ -11,21 +13,30 @@ class DrawerFooterButtons extends StatelessWidget {
       children: [
         DrawerButtons(
           'My cards',
-          Icon(Icons.credit_card),
           true,
-          180,
+          Transform.rotate(
+            angle: 180 * math.pi / 180,
+            alignment: Alignment.center,
+            child: Icon(Icons.credit_card),
+          ),
         ),
         DrawerButtons(
           'Settings',
-          Icon(Icons.settings),
           false,
-          0,
+          Transform.rotate(
+            angle: 180 * math.pi / 180,
+            alignment: Alignment.center,
+            child: Icon(Icons.settings),
+          ),
         ),
         DrawerButtons(
           'Help!',
-          Icon(Icons.report_gmailerrorred),
           false,
-          190,
+          Transform.rotate(
+            angle: 192 * math.pi / 180,
+            alignment: Alignment.center,
+            child: Icon(Icons.report_gmailerrorred),
+          ),
         )
       ],
     );

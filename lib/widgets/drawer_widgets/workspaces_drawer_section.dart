@@ -1,4 +1,8 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
+
+import 'drawer_buttons.dart';
 
 class WorkspacesDrawerSection extends StatelessWidget {
   @override
@@ -35,10 +39,17 @@ class WorkspacesDrawerSection extends StatelessWidget {
             height: 45,
             child: Row(
               children: [
-                SizedBox(width: 15),
-                Icon(Icons.access_alarms),
-                SizedBox(width: 30),
-                Text('Home'),
+                DrawerButtons(
+                  'placeholder',
+                  false,
+                  Transform(
+                    alignment: Alignment.center,
+                    transform: Matrix4.rotationY(math.pi),
+                    child: Icon(
+                      Icons.supervisor_account_rounded,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

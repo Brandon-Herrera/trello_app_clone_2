@@ -4,24 +4,14 @@ import 'package:flutter/material.dart';
 
 class DrawerButtons extends StatelessWidget {
   final String drawerButtonTitle;
-  final Icon uniqueIcon;
   final bool borderOption;
-  final int rotation;
+  final Transform uniqueTransformForWorkspacesSection;
 
   DrawerButtons(
     this.drawerButtonTitle,
-    this.uniqueIcon,
     this.borderOption,
-    this.rotation,
+    this.uniqueTransformForWorkspacesSection,
   );
-
-  // final String drawerButtonTitle;
-  // final Map<String, Icon> iconNames = {
-  //   'Boards': Icon(Icons.square_foot),
-  //   'Home': Icon(Icons.hearing_outlined),
-  // };
-
-  // DrawerButtons(this.drawerButtonTitle);
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +30,7 @@ class DrawerButtons extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(width: 15),
-          rotation == 0
-              ? uniqueIcon
-              : Transform.rotate(
-                  angle: rotation * math.pi / 180,
-                  alignment: Alignment.center,
-                  child: uniqueIcon),
+          uniqueTransformForWorkspacesSection,
           SizedBox(width: 30),
           Text(drawerButtonTitle),
         ],
