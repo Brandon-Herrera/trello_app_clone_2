@@ -12,18 +12,24 @@ class BoardScreen extends StatefulWidget {
 class _BoardScreenState extends State<BoardScreen> {
   @override
   Widget build(BuildContext context) {
+    double bodyHeight = (MediaQuery.of(context).size.height -
+        MediaQuery.of(context).padding.top);
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          SizedBox(height: 15),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              BoardListItem(),
-            ],
-          ),
-        ],
+      body: Container(
+        height: bodyHeight,
+        color: Color(0xff008FE4),
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          children: [
+            BoardListItem(55, 'Red'),
+            BoardListItem(10, 'Yellow'),
+            BoardListItem(200, 'Green'),
+            BoardListItem(200, 'Menial'),
+            BoardListItem(200, 'Red')
+          ],
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
