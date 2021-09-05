@@ -15,7 +15,36 @@ class _BoardScreenState extends State<BoardScreen> {
     double bodyHeight = (MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Daily Hub'),
+        centerTitle: false,
+        actions: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Icon(Icons.align_horizontal_center),
+              SizedBox(width: 20),
+              Container(
+                height: 32,
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
+                  ),
+                  color: Colors.deepOrange[500],
+                ),
+                child: Container(
+                  padding: EdgeInsets.all(0),
+                  child: Icon(Icons.notifications_none_sharp),
+                ),
+              ),
+              SizedBox(width: 20),
+              Icon(Icons.more_horiz),
+              SizedBox(width: 10),
+            ],
+          ),
+        ],
+      ),
       body: Container(
         height: bodyHeight,
         color: Color(0xff008FE4),
