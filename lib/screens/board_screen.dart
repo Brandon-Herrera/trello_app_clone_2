@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/board_screen_widgets/board_list_item.dart';
 import '../widgets/drawer_widgets/board_drawer.dart';
 import 'home_screen.dart';
+import 'notifications_screen.dart';
 
 class BoardScreen extends StatefulWidget {
   // const BoardScreen({Key? key}) : super(key: key);
@@ -46,18 +47,26 @@ class _BoardScreenState extends State<BoardScreen> {
             children: [
               Icon(Icons.align_horizontal_center),
               SizedBox(width: 20),
-              Container(
-                height: 32,
-                padding: EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NotificationsScreen(),
                   ),
-                  color: Colors.deepOrange[500],
                 ),
                 child: Container(
-                  padding: EdgeInsets.all(0),
-                  child: Icon(Icons.notifications_none_sharp),
+                  height: 35,
+                  padding: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                    color: Colors.deepOrange[500],
+                  ),
+                  child: Container(
+                    padding: EdgeInsets.all(0),
+                    child: Icon(Icons.notifications_none_sharp),
+                  ),
                 ),
               ),
               SizedBox(width: 5),
