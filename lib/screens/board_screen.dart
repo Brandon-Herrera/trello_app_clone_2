@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/board_screen_widgets/board_list_item.dart';
-import '../widgets/board_screen_widgets/board_drawer.dart';
+import '../widgets/drawer_widgets/board_drawer.dart';
 import 'home_screen.dart';
 
 class BoardScreen extends StatefulWidget {
