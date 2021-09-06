@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../widgets/board_screen_widgets/board_list_item.dart';
 import '../widgets/board_screen_widgets/board_drawer.dart';
+import 'home_screen.dart';
 
 class BoardScreen extends StatefulWidget {
-  const BoardScreen({Key? key}) : super(key: key);
+  // const BoardScreen({Key? key}) : super(key: key);
 
   @override
   _BoardScreenState createState() => _BoardScreenState();
 }
 
 class _BoardScreenState extends State<BoardScreen> {
-  final GlobalKey<ScaffoldState>? _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   var _scrollController = PageController(viewportFraction: 0.75);
-  // when changing the viewportFraction, make sure to full refresh to see updated change
 
   @override
   void initState() {
@@ -27,12 +27,18 @@ class _BoardScreenState extends State<BoardScreen> {
         MediaQuery.of(context).padding.top);
     return Scaffold(
       key: _scaffoldKey,
+      endDrawerEnableOpenDragGesture: false,
       appBar: AppBar(
         title: Text('Daily Hub'),
         centerTitle: false,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_outlined),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
+          },
         ),
         actions: [
           Row(
@@ -54,18 +60,19 @@ class _BoardScreenState extends State<BoardScreen> {
                   child: Icon(Icons.notifications_none_sharp),
                 ),
               ),
-              SizedBox(width: 20),
-              // IconButton(
-              //   icon: Icon(Icons.more_horiz),
-              //   onPressed: () => _scaffoldKey.currentState.openDrawer(),
-              // ),
-              Icon(Icons.more_horiz),
+              SizedBox(width: 5),
+              IconButton(
+                icon: Icon(Icons.more_horiz),
+                onPressed: () {
+                  _scaffoldKey.currentState?.openEndDrawer();
+                },
+              ),
               SizedBox(width: 10),
             ],
           ),
         ],
       ),
-      drawer: BoardDrawer(),
+      endDrawer: BoardDrawer(),
       body: Container(
         height: bodyHeight,
         color: Color(0xff008FE4),
